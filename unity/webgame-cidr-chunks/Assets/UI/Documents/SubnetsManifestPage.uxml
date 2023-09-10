@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="SubnetBlockRequestInput" src="project://database/Assets/UI/Documents/SubnetBlockRequestInput.uxml?fileID=9197481963319205126&amp;guid=d70be6b37842644c593acecfaf928938&amp;type=3#SubnetBlockRequestInput" />
+    <ui:Template name="SubnetsManifest" src="project://database/Assets/UI/Documents/SubnetsManifest.uxml?fileID=9197481963319205126&amp;guid=af11f7a62d1bb4dd6be7cb035dda427a&amp;type=3#SubnetsManifest" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Instance template="SubnetBlockRequestInput" name="SubnetBlockRequestInput" />
+        <ui:Instance template="SubnetsManifest" name="SubnetsManifest" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,4 +1,5 @@
 using System;
+using Core.Domain;
 using NUnit.Framework;
 
 namespace Core.CoreTests
@@ -18,7 +19,7 @@ namespace Core.CoreTests
             {
                 var sut = new Ipv4Cidr(invalidCidrInput);
                 Assert.Fail($"Expected exception to be thrown for invalid cidr input {invalidCidrInput}");
-            } catch (Exception ex)
+            } catch (Exception _)
             {
                 Assert.Pass();
             }

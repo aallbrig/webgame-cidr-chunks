@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Label tabindex="-1" text="Subnet Block Request User Input" display-tooltip-when-elided="true" />
+        <ui:TextField picking-mode="Ignore" label="CIDR" value="filler text" name="cidr-input" />
+        <ui:Button text="Add Subnet Block Request" display-tooltip-when-elided="true" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,8 +1,10 @@
 using System;
 using System.Text.RegularExpressions;
+using UnityEngine.Serialization;
 
-namespace Core
+namespace Core.Domain
 {
+    [Serializable]
     public class Ipv4Cidr
     {
         private static readonly string _pattern = @"\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/([0-9]|[1-2][0-9]|3[0-2])\b";
@@ -12,12 +14,12 @@ namespace Core
         private static readonly int _thirdOctetIndex = 3;
         private static readonly int _fourthOctetIndex = 4;
         private static readonly int _cidrPrefixIndex = 5;
-        public int FirstOctet;
-        public int SecondOctet;
-        public int ThirdOctet;
-        public int FourthOctet;
-        public int CidrPrefix;
-        public string Cidr;
+        [NonSerialized] public int FirstOctet;
+        [NonSerialized] public int SecondOctet;
+        [NonSerialized] public int ThirdOctet;
+        [NonSerialized] public int FourthOctet;
+        [NonSerialized] public int CidrPrefix;
+        public string cidr;
         private string _cidrInput;
 
         public Ipv4Cidr(string cidrInput)
@@ -38,10 +40,10 @@ namespace Core
             ParseByte(out ThirdOctet, match.Groups[_thirdOctetIndex].Value);
             ParseByte(out ThirdOctet, match.Groups[_fourthOctetIndex].Value);
             ParseCidr(out CidrPrefix, match.Groups[_cidrPrefixIndex].Value);
-            Cidr = match.Groups[_fullGroupIndex].Value;
-            if (cidrInput != Cidr)
+            cidr = match.Groups[_fullGroupIndex].Value;
+            if (cidrInput != cidr)
             {
-                throw new ArgumentException(nameof(cidrInput), $"Cidr input {cidrInput} doesn't match regex matched {Cidr}");
+                throw new ArgumentException(nameof(cidrInput), $"Cidr input {cidrInput} doesn't match regex matched {cidr}");
             }
             _cidrInput = cidrInput;
         }

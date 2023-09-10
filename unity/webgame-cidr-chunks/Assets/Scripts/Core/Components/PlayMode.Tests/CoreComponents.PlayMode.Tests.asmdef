@@ -1,14 +1,13 @@
 {
-    "name": "CoreTests",
+    "name": "CoreComponents.PlayMode.Tests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Core"
+        "CoreComponents",
+        "CoreDomain"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
